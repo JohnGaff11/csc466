@@ -5,40 +5,67 @@ permalink: index.html  # Is the only page that doesn't follow the pattern /:path
 ---
 
 > ## Instructor
-> - **Instructor**: Golden Rams
-> - **Office**: the Quad
-> - **Office Hours**: 24/7
-> - **Email**: goldenrams AT wcupa DOT edu
-> - **Phone**: 123 456 7890
+> - **Instructor**: Linh B. Ngo
+> - **Office**: Room 138, 25 University Avenue (UNA building)
+> - **Office Hours**: TBD
+> - **Email**: lngo AT wcupa DOT edu
+> - **Phone**: 610-436-2595 (don’t call, email)
 {: .prereq}
 
 > ## Course Description
-> Course description goes here
+> - This course will investigate issues in modern distributed platforms by examining a 
+> number of important technologies in the areas of distributed computing in computational
+> and data-intensive problems.
+>
+> - By the end of the course, each student should understand and be able to apply several 
+> specific tradeoffs for parallel application and algorithms development, performance, and 
+> management on a number of distributed platforms.
 >
 {: .prereq}
 
 > ## Learning Objectives:
 >
 > ### Student Learning Objectives:
-> - SLO1
+> - Be able to apply theory, techniques, and methodologies to create and/or maintain high quality
+> computing systems that function effectively and reliably in the emerging and future information
+> infrastructure.
+> - Be able to work in teams, demonstrate ethical professionalism in their work, and grow 
+> professionally while engaging in life-long learning. 
+> - Students will be able to apply design and development principles in the construction of 
+> large-scale computing systems.
 >
-> ### General Education Learning Objectives:
-> - GELO1
+> ### Student Learning Outcomes:
+> 1. Analyze a complex computing problem and to apply principles of computing and other relevant
+> disciplines to identify solutions.
+> 2. Design, implement, and evaluate a computing-based solution to meet a given set of computing
+> requirements in the context of the program’s discipline.
+> 3. Function effectively as a member or leader of a team engaged in activities appropriate to the 
+> program’s discipline.
 >
-> ### Alignment of Course to General Education Goals:
-> - Alignment 1
->
+> ### Course Topics:
+> - Cluster of Computers
+> - Parallel and Distributed File Systems
+> - High Performance and Data-Intensive Computing
+> - Job Scheduling on Cluster of Computers
+> - Complex Distributed Systems. 
+> 
 > ### Artifacts used to demonstrate Student Learning Outcomes:
->
+> - Assignments: In writing and running programs and analyzing execution performances, 
+> students will be assessed on SLO1.
+> - Labs: In design, implement, and deploy various components of high-performance computing
+> infrastructures as part of a team, students will be assessed on SLO2 and SLO3. 
+> - Quizzes and Exams: Students will be assessed on their understanding of theoretical concepts
+> necessary to support the tasks decribed in the assignments.
 {: .objectives}
 
 
 > ## Prerequisites
-> This course requires ...
+> - Data structures and algorithms (CSC 241). 
+> - Basic knowledge of C/C++ and Linux. 
 {: .prereq}
 
 > ## Required Text (either print or e-book):
->
+> - There is no textbook requirement for this course. 
 {: .prereq}
 
 > ## Evaluation Policy:
@@ -47,11 +74,12 @@ permalink: index.html  # Is the only page that doesn't follow the pattern /:path
 >
 > | Percentage | Tasks |
 > | ---------- | ----- |
-> | 20% | Homework Sets (approximately 4-5 homework sets) |
-> | 15% | Labs (approximately biweekly labs) |
-> | 5% | Problets (online practice exercises) |
-> | 45% | Three Midterm Exams (15% each) |
-> | 15% | Final Exam |
+> | 30% | Homework Sets |
+> | 20% | Labs (approximately biweekly labs) |
+> | 20% | Quizzes |
+> |  5% | Participtation |
+> | 15% | Midterm |
+> | 10% | Final Exam |
 >
 > ### Grade Scale:
 >
@@ -71,8 +99,8 @@ permalink: index.html  # Is the only page that doesn't follow the pattern /:path
 > | <= 59	| F |
 >
 > ### Lateness Policy:
-> Assignments that are late are assessed a 10% per day late penalty.
-> Saturday and Sunday are each days.
+> Without prior approval from the instructors, late homework assignments will not be accepted but 
+> will be assigned a grade of zero.
 {: .keypoints}
 
 

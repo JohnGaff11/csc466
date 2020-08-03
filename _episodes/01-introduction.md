@@ -1,9 +1,9 @@
 ---
-title: "Introduction"
+title: "The demand for computational speed"
 teaching: 0
 exercises: 0
 questions:
-- "Key question (FIXME)"
+- "Why do we need faster computing platforms?"
 objectives:
 - "First learning objective. (FIXME)"
 keypoints:
