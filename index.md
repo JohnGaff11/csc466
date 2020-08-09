@@ -43,6 +43,7 @@ permalink: index.html  # Is the only page that doesn't follow the pattern /:path
 > program’s discipline.
 >
 > ### Course Topics:
+> - Introduction to Parallel Programming
 > - Cluster of Computers
 > - Parallel and Distributed File Systems
 > - High Performance and Data-Intensive Computing
@@ -65,7 +66,10 @@ permalink: index.html  # Is the only page that doesn't follow the pattern /:path
 {: .prereq}
 
 > ## Required Text (either print or e-book):
-> - There is no textbook requirement for this course. 
+> We will utilize the following textbooks in this course (freely available online via CC_BY license by > the author):
+> 
+> - ["Parallel Programming for Science and Engineering" by Victor Eijkhout (2017)](https://bitbucket.org/VictorEijkhout/parallel-computing-book/src/default/EijkhoutParComp.pdf)
+> - ["Introduction to High Performance Scientific COmputing" by Victor Eijkhout (2020)](https://bitbucket.org/VictorEijkhout/hpc-book-and-course/src/default/EijkhoutIntroToHPC.pdf)
 {: .prereq}
 
 > ## Evaluation Policy:
@@ -74,8 +78,8 @@ permalink: index.html  # Is the only page that doesn't follow the pattern /:path
 >
 > | Percentage | Tasks |
 > | ---------- | ----- |
-> | 30% | Homework Sets |
-> | 20% | Labs (approximately biweekly labs) |
+> | 40% | Homework Sets |
+> | 10% | Labs |
 > | 20% | Quizzes |
 > |  5% | Participtation |
 > | 15% | Midterm |

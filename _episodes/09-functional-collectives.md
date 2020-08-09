@@ -1,5 +1,5 @@
 ---
-title: " "
+title: "MPI: Functional parallelism and collectives"
 teaching: 0
 exercises: 0
 questions:

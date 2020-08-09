@@ -1,5 +1,5 @@
 ---
-title: " "
+title: "Introduction to MPI"
 teaching: 0
 exercises: 0
 questions:

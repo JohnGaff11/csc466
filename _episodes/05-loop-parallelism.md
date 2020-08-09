@@ -1,5 +1,5 @@
 ---
-title: " "
+title: "OpenMP: parallel regions and loop parallelism"
 teaching: 0
 exercises: 0
 questions:
