@@ -69,3 +69,9 @@ $(window).scroll(function(){
         }
     }
 });
+
+MathJax.Hub.Config({
+    "HTML-CSS": {
+      scale: 120
+    }
+  });
