@@ -154,6 +154,185 @@ keypoints:
 {: .slide}
 
 
+> ## Example 2
+> 
+> Suppose that 4% of my application is serial. What is my predicted speedup
+> according to Amdahl's Law on 5 processors?
+>  
+> > ## Solution
+> > $$f=0.04$$  
+> > $$p=5$$  
+> > $$S=\frac{p}{(p-1)f + 1)}=\frac{5}{4 \times 0.4 +1}=1.9231$$
+> {: .solution}
+{: .challenge}
+
+
+> ## Example 3
+> 
+> Suppose that I get a speedup of 8 when I run my application on
+> 10 processors. According to Amdahl's Law:
+> - What portion of my code is serial?
+> - What is the speedup on 20 processors?
+> - What is the efficiency on 5 processors? 20 processors?
+> - What is the best speedup that I could achieve?
+>  
+> > ## Serial portion
+> > $$S=8$$  
+> > $$p=10$$  
+> > $$S=\frac{p}{(p-1)f + 1)}$$  
+> > $$8=\frac{10}{9f+1}$$  
+> > $$9f + 1 = \frac{10}{8}$$  
+> > $$f=\frac{1}{36}$$  
+> {: .solution}
+>
+> > ## Speedup on 20 processors
+> > $$f=\frac{1}{36}$$  
+> > $$p=20$$  
+> > $$S_20=\frac{p}{(p-1)f + 1)}=\frac{20}{\frac{19}{36}+1} \approx 13.0909$$  
+> {: .solution}
+>
+> > ## Efficiency
+> > $$E=\frac{1}{(p-1)f + 1}$$  
+> > $$E_5=\frac{1}{\frac{4}{36}+1} = 90% $$  
+> > $$E_20=\frac{1}{\frac{19}{36} + 1} \approx 65.45% $$  
+> {: .solution}
+>
+> > ## Best speedup
+> > $$f=\frac{1}{36}$$  
+> > $$S_{\infty}=\lim_{p \to +\infty} \frac{p}{(p-1)f + 1} = \lim_{p \to +\infty} \frac{1}{\frac{p}{p-1}f + \frac{1}{p}}=\frac{1}{f}$$  
+> > $$S_{\infty}= 36$$  
+> > 
+> > - In other word, the highest number of processors one should add to this problem is 36.
+> {: .solution}
+{: .challenge}
+
+
+> ## Limiting factors of parallel speedup
+> - Non-parallelizable code.
+> - Communication overhead. 
+{: .slide}
+
+
+> ## If there is no limiting factor ...
+> - 0% non-paralellizable code. 
+> - No communication overhead.   
+> $$S_{\infty}=\lim_{f \to 0} \frac{p}{(p-1)f + 1} = p$$  
+> $$S \leq p$$  
+{: .slide}
+
+
+> ## Superlinear speedup
+> - The unicorn of parallel and distributed computing. 
+> - Poor sequential reference implementation.
+> - Memory caching.
+> - I/O blocking. 
+{: .slide}
+
+
+> ## Computer architecture: Flynn's Taxonomy
+> <img src="../assets/figure/02-intro-parallel/09.png" alt="Flyn's taxonomy" style="height:500px">
+{: .slide}
+
+
+> ## Types of distributed computing systems
+> - Streaming SIMD extensions for x86 architectures.
+> - Shared memory.
+> - Distributed shared memory.
+> - Heterogeneous computing (accelerators).
+> - Message passing. 
+{: .slide}
+
+
+> ## Streaming SIMD
+> <img src="../assets/figure/02-intro-parallel/09.png" alt="Streaming simd" style="height:400px">
+{: .slide}
+
+
+> ## Shared memory
+> - One processor, multiple threads. 
+> - All threads have read/write access to the same memory. 
+> - Programming models:
+>   - Threads (pthread) - programmer manages all parallelism. 
+>   - OpenMP: compiler extensions handle. 
+>   - Vendor libraries: (Intel MKL - math kernel libraries)
+> <img src="../assets/figure/02-intro-parallel/10.png" alt="shared memory" style="height:400px">
+{: .slide}
+
+
+> ## Heterogeneous computing
+> - GPU 
+> - FPGA
+> - Co-processors
+{: .slide}
+
+
+> ## GPU - graphics processing unit
+> - Processor unit on graphic cards designed to support graphic rendering (numerical manipulation). 
+> - Significant advantage for certain classes of scientific problems.  
+> - Programming models:
+>   - CUDA: Library developed by NVIDIA for their GPUs. 
+>   - OpenACC: Standard developed by NVIDIA, Cray, and Portal Compiler (PGI).
+>   - OpenAMP: Extension to Visual C++ to direct computation to GPU. 
+>   - OpenCL: Public standard by the group the developed OpenGL. 
+> <img src="../assets/figure/02-intro-parallel/11.png" alt="GPU" style="height:400px">
+{: .slide}
+
+
+> ## FPGA - field programmable array
+> - Dynamically reconfigurable circuit board. 
+> - Expensive, difficult to program. 
+> - Power efficient, low heat. 
+{: .slide}
+
+
+> ## Co-processors
+> - Enables offloading of computationally intensive tasks from main CPU. 
+> - Similar to GPU, but can support a wider range of computational tasks. 
+> - Intel
+>   - Xeon Phi processor line.
+>   - PCIe-based add-on cards, but could also be used as a stand alone CPU. 
+>   - Unlike GPU, Intel Xeon supports all programs targeted to standard x86 CPU (very minor modification if any)
+{: .slide}
+
+
+> ## GPU - graphics processing unit
+> - Processes handle their own memory. 
+> - Data is passed between processes via messages. 
+>   - Scales well. 
+>   - Cluster can be built from commodity parts. 
+>   - Cluster can easily be expanded. 
+>   - Cluster can be heterogeneous.  
+> - Programming models:
+>   - MPI: standardized message passing library. 
+>   - MPI + OpenMP: hybrid model. 
+>   - MapReduce programming model for big data processing.  
+> <img src="../assets/figure/02-intro-parallel/12.png" alt="message passing" style="height:400px">
+{: .slide}
+
+> ## Benchmarking
+> - LINPACK (Linear Algebra Package): Dense Matrix Solver 
+> - HPCC: High-Performance Computing Challenge. 
+>   - HPL (LINPACK to solve linear system of equations)
+>   - DGEMM (Double precision general matrix multiply) 
+>   - STREAM (Memory bandwidth)
+>   - PTRANS (Parallel matrix transpose to measure processors communication)
+>   - RandomAccess (random memory updates)
+>   - FFT (double precision complex discrete fourier transform)
+>   - Communication bandwidth and latency
+> - SHOC: Scalable heterogeneous computing
+>   - Non-traditional system (GPU)
+> - TestDFSIO
+>   - I/O performance of MapReduce/Hadoop Distributed File System.   
+{: .slide}
+
+
+> ## Ranking
+> - TOP500: Rank the supercomputers based on their LINPACK score.  
+> - GREEN500: Rank the supercomputers with emphasis on energy usage (LINPACK/power consumption).
+> - GRAPH500: Rank systems based on benchmarks designed for data-intensive computing. 
+{: .slide}
+
+
 {% include links.md %}
 
 
