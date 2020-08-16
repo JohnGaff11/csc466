@@ -5,9 +5,12 @@ exercises: 0
 questions:
 - "What is parallel computing?"
 objectives:
-- " "
+- "Understand basic architectures and computing models for parallel computing."
+- "Understand and be able to carry out rudimentary speedup and efficiency study."
 keypoints:
-- " "
+- "There various parallel computing architecture/model"
+- "Users need to find the one that give the best speedup/efficiency measures."
+- "Speed/efficiency depends on how well programs are parallelized."
 ---
 
 > ## Envision the payroll problem

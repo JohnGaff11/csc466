@@ -78,7 +78,8 @@ permalink: index.html  # Is the only page that doesn't follow the pattern /:path
 {: .prereq}
 
 > ## Required Text (either print or e-book):
-> We will utilize the following textbooks in this course (freely available online via CC_BY license by > the author):
+> We will utilize the following textbooks in this course (freely available online via CC_BY license by 
+> the author):
 > 
 > - ["Parallel Programming for Science and Engineering" by Victor Eijkhout (2017)](https://bitbucket.org/VictorEijkhout/parallel-computing-book/src/default/EijkhoutParComp.pdf)
 > - ["Introduction to High Performance Scientific COmputing" by Victor Eijkhout (2020)](https://bitbucket.org/VictorEijkhout/hpc-book-and-course/src/default/EijkhoutIntroToHPC.pdf)
@@ -115,8 +116,8 @@ permalink: index.html  # Is the only page that doesn't follow the pattern /:path
 > | <= 59	| F |
 >
 > ### Lateness Policy:
-> Without prior approval from the instructors, late homework assignments will not be accepted but 
-> will be assigned a grade of zero.
+> Without prior approval from the instructors, late homework assignments will not be 
+> accepted but will be assigned a grade of zero.
 {: .keypoints}
 
 
@@ -233,26 +234,29 @@ permalink: index.html  # Is the only page that doesn't follow the pattern /:path
 > the [OSSD website](http://www.wcupa.edu/ussss/ossd).  
 >
 > ### Title IX Statement:
-> West Chester University and its faculty are committed to assuring a safe and
-> productive educational environment for all students. In order to meet this
-> commitment and to comply with Title IX of the Education Amendments of 1972
-> and guidance from the Office for Civil Rights, the University requires
-> faculty members to report incidents of sexual violence shared by students
-> to the University's Title IX Coordinator, Ms. Lynn Klingensmith. The only
-> exceptions to the faculty member's reporting obligation are when incidents
-> of sexual violence are communicated by a student during a classroom
-> discussion, in a writing assignment for a class, or as part of a
-> University-approved research project. Faculty members are obligated to
-> report sexual violence or any other abuse of a student who was, or is, a
-> child (a person under 18 years of age) when the abuse allegedly occurred to
-> the person designated in the University protection of minors policy.  
-> Information regarding the reporting of sexual violence and the resources
-> that are available to victims of sexual violence is set forth at the
-> [Office of Social Equity website](http://www.wcupa.edu/_admin/social.equity).
+> West Chester University and its faculty are committed to assuring a 
+> safe and productive educational environment for all students. In order 
+> to comply with the requirements of Title IX of the Education Amendments 
+> of 1972 and the University’s commitment to offering supportive measures 
+> in accordance with the new regulations issued under Title IX, the 
+> University requires faculty members to report incidents of sexual 
+> violence shared by students to the University's Title IX Coordinator. 
+> The only exceptions to the faculty member's reporting obligation are 
+> when incidents of sexual violence are communicated by a student during a 
+> classroom discussion, in a writing assignment for a class, or as part of 
+> a University-approved research project. **Faculty members are obligated 
+> to report sexual violence or any other abuse of a student who was, or is, 
+> a child (a person under 18 years of age) when the abuse allegedly occurred 
+> to the person designated in the University Protection of Minors Policy**.
+>  Information regarding the reporting of sexual violence and the resources 
+> that are available to victims of sexual violence is set forth at: 
+> [https://www.wcupa.edu/_admin/diversityEquityInclusion/sexualMisconduct/default.aspx].
 >
 > ### Emergency Contact:
-> In the event of an emergency during class, the phone number for WCU’s
-> Department of Public Safety is 610-436-3311.
+> All students are encouraged to sign up for the University’s free WCU 
+> ALERT service, which delivers official WCU emergency text messages directly 
+> to your cell phone.  For more information, visit www.wcupa.edu/wcualert. 
+> To report an emergency, call the Department of Public Safety at 610-436-3311.
 {: .keypoints}
 
 {% include links.md %}
