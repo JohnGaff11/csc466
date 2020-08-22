@@ -132,7 +132,12 @@ keypoints:
 > ## What's important?
 > - `tid` and `nthreads`.    
 > - They allow us to coordinate the parallel workloads.   
-> - Specify the environment variable **OMP_NUM_THREADS**.   
+> - Specify the environment variable **OMP_NUM_THREADS**. 
+> 
+> ~~~
+> $ export OMP_NUM_THREADS=4
+> ~~~
+> {: .language-bash}  
 {: .slide}
 
 
@@ -166,10 +171,11 @@ keypoints:
 >   double a = atof(argv[1]);
 >   double b = atof(argv[2]);
 >   int N = atoi(argv[3]);
->   int nthreads = omp_get_num_threads();
+>   int nthreads = atoi(argv[4]);
 >   double partial_sum[nthreads];
 >   int h = (int)((b - a) / nthreads);    
-> 
+>
+>   omp_set_thread_nums(nthreads);
 >   #pragma omp parallel 
 >   {
 >     int tid = omp_get_thread_num();
@@ -194,7 +200,59 @@ keypoints:
 > ~~~
 > {: .language-c}
 > 
-> <img src="../assets/figure/03-intro-openmp/07.png" alt="create trapezoid.c" style="height:700px">
+> <img src="../assets/figure/03-intro-openmp/07.png" alt="create trapezoid.c" style="height:1000px">
+{: .slide}
+
+
+> ## Hands-on 4: A bit more detailed
+>
+> - Modify the `trapezoid.c` so that it looks like below. 
+> - Save the file when you are done: 
+>   - `Ctrl-S` for Windows/Linux
+>   - `Command-S` for Macs
+> - **Memorize your key-combos!**.
+>
+> ~~~
+> #include <omp.h>
+> #include <stdio.h>
+> #include <stdlib.h>
+>
+> int main (int argc, char *argv[]) {
+>   //init parameters and evaluators
+>   double a = atof(argv[1]);
+>   double b = atof(argv[2]);
+>   int N = atoi(argv[3]);
+>   int nthreads = atoi(argv[4]);
+>   double partial_sum[nthreads];
+>   int h = (int)((b - a) / nthreads);    
+> 
+>   omp_set_thread_nums(nthreads);
+>   #pragma omp parallel 
+>   {
+>     int tid = omp_get_thread_num();
+>     /* number of trapezoids per thread */
+>     int partial_n = N / nthreads;
+>     double delta = (b - a)/N;
+>     double local_a = a + h * tid;
+>     double local_b = local_a + delta;
+>     for (int i = 0; i < partial_n; i++) {
+>       partial_sum[tid] += (local_a * local_a + local_b * local_b) * delta / 2;
+>       local_a = local_b;
+>       local_b += delta;
+>     }
+>     printf("Thread %d calculate a partial sum of %.4f from %.4f to %.4f\n", tid, partial_sum[tid], a + h*tid, local_a);
+>   } 
+>   double sum = 0;
+>   for (int i = 0; i < nthreads; i++) {
+>     sum += partial_sum[i];
+>   }
+>   printf("The integral is: %.4f\n", sum);
+>   return 0;
+> }
+> ~~~
+> {: .language-c}
+> 
+> <img src="../assets/figure/03-intro-openmp/08.png" alt="modify trapezoid.c" style="height:1000px">
 {: .slide}
 
 
@@ -230,9 +288,10 @@ keypoints:
 > >   double a = atof(argv[1]);
 > >   double b = atof(argv[2]);
 > >   int N = atoi(argv[3]);
-> >   int nthreads = omp_get_num_threads();
+> >   int nthreads = atoi(argv[4]);
 > >   double partial_sum[nthreads];
-> >    
+> >
+> >   omp_set_thread_nums(nthreads);
 > >   #pragma omp parallel 
 > >   {
 > >     int tid = omp_get_thread_num();
@@ -278,9 +337,10 @@ keypoints:
 > > 
 > > int main (int argc, char *argv[]) {
 > >   int N = atoi(argv[1]);
-> >   int nthreads = omp_get_num_threads();
+> >   int nthreads = atoi(argv[2]);
 > >   int partial_sum[nthreads];
 > >    
+> >   omp_set_thread_nums(nthreads);
 > >   #pragma omp parallel 
 > >   {
 > >     int tid = omp_get_thread_num();
@@ -330,9 +390,10 @@ keypoints:
 > > 
 > > int main (int argc, char *argv[]) {
 > >   int N = atoi(argv[1]);
-> >   int nthreads = omp_get_num_threads();
+> >   int nthreads = atoi(argv[2]);
 > >   int partial_sum[nthreads];
 > >    
+> >   omp_set_thread_nums(nthreads);
 > >   #pragma omp parallel 
 > >   {
 > >     int tid = omp_get_thread_num();
@@ -350,6 +411,66 @@ keypoints:
 > > 
 > {: .solution}
 {: .challenge}
+
+
+> ## Hands-on 5: Trapezoid implementation with timing
+>
+> - In the **EXPLORER** window, right-click on `csc466/openmp` and select `New File`.
+> - Type `trapezoid_time.c` as the file name and hits Enter. 
+> - Enter the following source code in the editor windows (You can copy the contents of `trapezoid.c` with function from **Challenge 1** as a starting point):
+> - Save the file when you are done: 
+>   - `Ctrl-S` for Windows/Linux
+>   - `Command-S` for Macs
+> - **Memorize your key-combos!**.
+>
+> ~~~
+> #include <omp.h>
+> #include <stdio.h>
+> #include <stdlib.h>
+> #include <time.h>
+>
+> int main (int argc, char *argv[]) {
+>   //init parameters and evaluators
+>   double a = atof(argv[1]);
+>   double b = atof(argv[2]);
+>   int N = atoi(argv[3]);
+>   int nthreads = atoi(argv[4]);
+>   double partial_sum[nthreads];
+>   int h = (int)((b - a) / nthreads);  
+>   clock_t start, end;  
+> 
+>   omp_set_thread_nums(nthreads);
+>   start = clock();
+>   #pragma omp parallel 
+>   {
+>     int tid = omp_get_thread_num();
+>     /* number of trapezoids per thread */
+>     int partial_n = N / nthreads;
+>     double delta = (b - a)/N;
+>     double local_a = a + h * tid;
+>     double local_b = local_a + delta;
+>     for (int i = 0; i < partial_n; i++) {
+>       partial_sum[tid] += (local_a * local_a + local_b * local_b) * delta / 2;
+>       local_a = local_b;
+>       local_b += delta;
+>     }
+>   } 
+>   end = clock();
+>   double sum = 0;
+>   for (int i = 0; i < nthreads; i++) {
+>     sum += partial_sum[i];
+>   }
+>   printf("The integral is: %.4f\n", sum);
+>   printf("The run time is: %.4f\n", ((double) (end - start)) / CLOCKS_PER_SEC);
+>   return 0;
+> }
+> ~~~
+> {: .language-c}
+> 
+> <img src="../assets/figure/03-intro-openmp/09.png" alt="create trapezoid.c" style="height:700px">
+>
+> - How's the run time?
+{: .slide}
 
 {% include links.md %}
 
