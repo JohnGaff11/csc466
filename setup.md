@@ -84,4 +84,13 @@ ssh USERNAME@taz.cs.wcupa.edu
 - It should be noted that you can link multiple email addresses to a GitHub account. Even if you
  already have a GitHub account, you might want to link the account to your WCUPA email. 
 
+
+## Setup an XSEDE account
+- Visit [XSEDE Portal page][xsede] to create an account on XSEDE. 
+- Watch out in case the confirmation email will go into WCUPA' spam folder. You can visit [https://wcupa.login-us.mimecast.com/], click on the `...` side tab, then `Personal On Hold` to see if the 
+confirmation email is there. 
+- Once you finished registering, go to [http://bit.ly/2ZtIas1] to fill out information about your XSEDE account. It is **important** that you give me your XSEDE account, which is the `USER NAME` that you use to login to XSEDE portal. 
+
+<img src="assets/figure/setup/xsede_01.png" alt="XSEDE login" style="height:400px">
+
 {% include links.md %}

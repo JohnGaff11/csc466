@@ -70,15 +70,50 @@ keypoints:
 {: .slide}
 
 
-> ## Hands-on 1: Trapezoid implementation with timing
+> ## Hands-on 1: Login to PSC Bridges
 >
-> - In the **EXPLORER** window, right-click on `csc466/openmp` and select `New File`.
-> - Type `trapezoid.c` as the file name and hits Enter. 
-> - Enter the following source code in the editor windows:
-> - Save the file when you are done: 
->   - `Ctrl-S` for Windows/Linux
->   - `Command-S` for Macs
-> - **Memorize your key-combos!**.
+> - Open a browser and go to `https://ondemand.bridges.psc.edu`.
+> - Enter the `Bridges` user name and password from the confirmation email.  
+> 
+> <img src="../assets/figure/04-intro-xsede/01.png" alt="Lc" style="height:400px">
+{: .slide}
+
+
+> ## Hands-on 2: Login to PSC Bridges
+>
+> - Open a browser and go to `https://ondemand.bridges.psc.edu`.
+> - Enter the `Bridges` user name and password from the confirmation email.  
+> 
+> <img src="../assets/figure/04-intro-xsede/01.png" alt="Login to ondemand" style="height:400px">
+{: .slide}
+
+
+> ## Hands-on 3: OnDemand navigation
+>
+> - Click on the `Files` and then `Home Directory`. 
+> 
+> <img src="../assets/figure/04-intro-xsede/02.png" alt="Go to Files " style="height:400px">
+>
+> - Top button row (`Go To`, `Open in Terminal`, `New File`, `New Dir`, `Upload`) operates
+> at directory level. 
+> - Next row (`View`, `Edit`, `Rename/Move`, `Copy`, `Paste`) operates on files. 
+>
+>  <img src="../assets/figure/04-intro-xsede/03.png" alt="Files and Directory" style="height:400px">
+>
+{: .slide}
+
+
+> ## Hands-on 4: Trapezoid implementation with timing
+>
+> - Click `New Dir` and enter `openmp`. Hit `OK`. 
+>
+> <img src="../assets/figure/04-intro-xsede/04.png" alt="Create the openmp directory" style="height:100px">
+>
+> - Double click on `openmp`. 
+> - Click `New File` and enter `trapezoid.c`. Hit `OK`. 
+> - Select `trapezoid.c` and click `Edit`. 
+> - Type/copy the code from the below into the editor windows. 
+> - Click `Save` to save the file. 
 >
 > ~~~
 > #include <omp.h>
@@ -124,5 +159,6 @@ keypoints:
 > ~~~
 > {: .language-c}
 > 
-> <img src="../assets/figure/03-intro-openmp/07.png" alt="create trapezoid.c" style="height:700px">
+> <img src="../assets/figure/04-intro-xsede/05.png" alt="Editingg trapezoid.c" style="height:700px">
+>
 {: .slide}
