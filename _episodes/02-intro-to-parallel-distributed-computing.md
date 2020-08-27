@@ -165,7 +165,7 @@ keypoints:
 > > ## Solution
 > > $$f=0.04$$  
 > > $$p=5$$  
-> > $$S=\frac{p}{(p-1)f + 1)}=\frac{5}{4 \times 0.4 +1}=1.9231$$
+> > $$S=\frac{p}{(p-1)f + 1}=\frac{5}{4 \times 0.4 +1}=1.9231$$
 > {: .solution}
 {: .challenge}
 
@@ -182,7 +182,7 @@ keypoints:
 > > ## Serial portion
 > > $$S=8$$  
 > > $$p=10$$  
-> > $$S=\frac{p}{(p-1)f + 1)}$$  
+> > $$S=\frac{p}{(p-1)f + 1}$$  
 > > $$8=\frac{10}{9f+1}$$  
 > > $$9f + 1 = \frac{10}{8}$$  
 > > $$f=\frac{1}{36}$$  
@@ -191,13 +191,13 @@ keypoints:
 > > ## Speedup on 20 processors
 > > $$f=\frac{1}{36}$$  
 > > $$p=20$$  
-> > $$S_20=\frac{p}{(p-1)f + 1)}=\frac{20}{\frac{19}{36}+1} \approx 13.0909$$  
+> > $$S_{20}=\frac{p}{(p-1)f + 1}=\frac{20}{\frac{19}{36}+1} \approx 13.0909$$  
 > {: .solution}
 >
 > > ## Efficiency
 > > $$E=\frac{1}{(p-1)f + 1}$$  
-> > $$E_5=\frac{1}{\frac{4}{36}+1} = 90% $$  
-> > $$E_20=\frac{1}{\frac{19}{36} + 1} \approx 65.45% $$  
+> > $$E_5=\frac{1}{\frac{4}{36}+1} = 90\% $$  
+> > $$E_{20}=\frac{1}{\frac{19}{36} + 1} \approx 65.45\% $$  
 > {: .solution}
 >
 > > ## Best speedup
